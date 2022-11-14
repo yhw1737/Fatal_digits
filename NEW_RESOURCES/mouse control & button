@@ -1,0 +1,161 @@
+
+#include <Windows.h>
+#include <stdio.h>
+#include <iostream>
+
+#define RESET_COLOR 15
+
+void gotoXY(int _x, int _y);
+void setCord(POINT* mpos, HWND* hWnd, RECT* window_pos);
+void loadMouseData(POINT* mpos, HWND* hWnd);
+void resetCord(POINT* mpos);
+int MWidth(RECT window_pos);
+int MHeight(RECT window_pos);
+void ShowPopupWindows(int _x, int _y, int _w, int _h, int _tx, int _ty, char* s);
+int Single(int _a);
+
+int x, y, a;
+short int curt, prev, push, pull;
+
+int main()
+{
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, RESET_COLOR);
+	POINT mpos;
+	HWND hWnd;
+	RECT window_pos_data;
+	resetCord(&mpos);
+	gotoXY(4, 4); std::cout << "마우스 클릭으로 동작하기!" << std::endl;
+	ShowPopupWindows(6, 6, 4, 4, 0, 0, "미클릭");
+	ShowPopupWindows(16, 6, 4, 4, 0, 0, "미클릭");
+	gotoXY(10, 12); std::cout << x << std::endl;
+	gotoXY(20, 12); std::cout << y << std::endl;
+
+	while (1) {
+		gotoXY(0, 0);
+		loadMouseData(&mpos, &hWnd);
+		setCord(&mpos, &hWnd, &window_pos_data);
+		a = Single(a);
+
+		if (GetAsyncKeyState(VK_LBUTTON)) {
+			gotoXY(8, 14); std::cout << "Click LeftBotton!" << std::endl;
+		}
+		else {
+			gotoXY(8, 14); std::cout << "               " << std::endl;
+		}
+
+		if (mpos.x >= 55 && mpos.x <= 120 && mpos.y >= 104 && mpos.y <= 167) {
+			SetConsoleTextAttribute(hConsole, 10);
+			ShowPopupWindows(6, 6, 4, 4, 0, 0, "올리기");
+			if (GetAsyncKeyState(VK_LBUTTON)) {
+				SetConsoleTextAttribute(hConsole, 240);
+				ShowPopupWindows(6, 6, 4, 4, 0, 0, "클릭");
+				SetConsoleTextAttribute(hConsole, RESET_COLOR);
+				if (push == 1) ++x;
+				gotoXY(10, 12); std::cout << x << std::endl;
+			}
+			SetConsoleTextAttribute(hConsole, RESET_COLOR);
+		}
+
+		if (mpos.x >= 136 && mpos.x <= 200 && mpos.y >= 104 && mpos.y <= 167) {
+			SetConsoleTextAttribute(hConsole, 10);
+			ShowPopupWindows(16, 6, 4, 4, 0, 0, "올리기");
+			if (GetAsyncKeyState(VK_LBUTTON)) {
+				SetConsoleTextAttribute(hConsole, 10);
+				ShowPopupWindows(16, 6, 4, 4, 0, 0, "클릭");
+				SetConsoleTextAttribute(hConsole, RESET_COLOR);
+				if (push == 1)++y;
+				gotoXY(20, 12); std::cout << y << std::endl;
+			}
+			SetConsoleTextAttribute(hConsole, RESET_COLOR);
+		}
+		gotoXY(0, 15);
+		Sleep(30);
+
+		ShowPopupWindows(6, 6, 4, 4, 0, 0, "미클릭");
+		ShowPopupWindows(16, 6, 4, 4, 0, 0, "미클릭");
+	}
+	return 0;
+}
+
+void gotoXY(int _x, int _y) {
+	COORD pos = { _x,_y };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), pos);
+}
+
+void setCord(POINT* mpos, HWND* hWnd, RECT* window_pos) {
+	ScreenToClient(*hWnd, mpos);
+	GetWindowRect(*hWnd, window_pos);
+}
+
+void loadMouseData(POINT* mpos, HWND* hWnd) {
+	GetCursorPos(mpos);
+	*hWnd = WindowFromPoint(*mpos);
+}
+
+void resetCord(POINT* mpos) {
+	mpos->x = 0;
+	mpos->y = 0;
+}
+
+int MWidth(RECT window_pos) {
+	return (window_pos.right - window_pos.left);
+}
+
+int MHeight(RECT window_pos) {
+	return (window_pos.bottom - window_pos.top);
+}
+
+void ShowPopupWindows(int _x, int _y, int _w, int _h, int _tx, int _ty, char* _s) {
+	int i = 0, j = 0, l = 0;
+	for (l; _s[l]; l++)
+		for (i; i <= _h; ++i) {
+			if (i == 0 && (_w != 0 || _h != 0)) {
+				gotoXY(_x, _y + i); printf("┌");
+				for (j; j < _w;) {
+					++j;
+					gotoXY(j * 2 + _x, i + _y); printf("─");
+				}
+				gotoXY(j * 2 + _x, +i + _y); printf("┐"); j = 0;
+			}
+			if (i != 0 && i < _h && (_w != 0 || _h != 0)) {
+				gotoXY(_x, _y + i); printf("│");
+				for (j; j < _w;) {
+					++j;
+					gotoXY(j * 2 + _x, i + _y); printf("  ");
+				}
+				gotoXY(j * 2 + _x, +i + _y); printf("│"); j = 0;
+			}
+			if (i == _h && (_w != 0 || _h != 0)) {
+				gotoXY(_x, _y + i); printf("└");
+				for (j; j < _w;) {
+					++j;
+					gotoXY(j * 2 + _x, i + _y); printf("─");
+				}
+				gotoXY(j * 2 + _x, +i + _y); printf("┘"); j = 0;
+			}
+		}
+	if (_tx == 0 && _ty == 0) {
+		gotoXY((((_w * 2) - 1) / 2) + 1 + _x, (_h / 2) + _y); printf("%s", _s); gotoXY(_x, _h + 1);
+	}
+	else if (_tx > 0 && _ty == 0) {
+		gotoXY(_tx + _x, (_h / 2) + _y); printf("%s", _s); gotoXY(_x, _h + 1);
+	}
+	else if (_ty > 0 && _tx == 0) {
+		gotoXY((((_w * 2) - 1) / 2) + 1 + _x, _ty + _y); printf("%s", _s); gotoXY(_x, _h + 1);
+	}
+	else {
+		gotoXY(_tx + _x, _ty + _y); printf("%s", _s); gotoXY(_x, _h + 1);
+	}
+}
+
+int Single(int _a) {
+	curt = 0;
+	if (GetAsyncKeyState(VK_LBUTTON)) curt = 1;
+
+	push = (prev ^ curt) & curt;
+	pull = (prev ^ curt) & prev;
+	prev = curt;
+	_a = 1;
+	return _a;
+}
