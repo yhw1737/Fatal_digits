@@ -4,3 +4,5 @@ attspd = 0.1*room_speed;
 spd = 0.25;
 maxspd = 5;
 accuracy = 0;
+image_xscale = 0.3;
+image_yscale = 0.3;
