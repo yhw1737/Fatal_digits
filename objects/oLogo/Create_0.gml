@@ -6,7 +6,7 @@
 width = sprite_width
 height = sprite_height
 x = (room_width - width) * 0.5
-y = (room_height - height) * 0.2
+y = (room_height - height) * 0.3
 
 /*
 	 노이즈가 흩뿌려질 경계의 크기입니다.
