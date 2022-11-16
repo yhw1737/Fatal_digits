@@ -5,3 +5,11 @@ if mouse_check_button_pressed(mb_left){
 		instance_deactivate_all(true);
 	}
 }
+if room == Room1{
+	if objselected = false{
+		if selection = false{
+			//instance_deactivate_all(true);
+			selection = true;
+		}
+	}
+}

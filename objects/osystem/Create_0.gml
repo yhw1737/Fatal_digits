@@ -8,3 +8,6 @@ s_g_h = surface_get_height(application_surface);
 surf=surface_create(s_g_w, s_g_h);
 active = false;
 c = 0;
+objselected = false;
+selection = false;
+obj = noone;
