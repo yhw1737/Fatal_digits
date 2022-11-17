@@ -24,9 +24,20 @@ function move_by(spd,maxspd){
 		if (d){
 			motion_add(270, spd);
 		}
+		if (!(r || l) || (r && l)){
+			if abs(hspeed) < 0.25{
+				hspeed = 0;
+			}
+			hspeed -= sign(hspeed)*(0.25);
+		}
+		if (!(u || d) || (u && d)){
+			if abs(vspeed) < 0.25{
+				vspeed = 0;
+			}
+			vspeed -= sign(vspeed)*(0.25);
+		}
 		friction = 0;
-		hspeed = clamp(hspeed,-maxspd,maxspd);
-		vspeed = clamp(vspeed,-maxspd,maxspd);
+		speed = clamp(speed,-maxspd,maxspd);
 	}
 	else {
 		friction = 0.25;

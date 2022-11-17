@@ -13,6 +13,7 @@
     {"id":{"name":"Spr_monster","path":"sprites/Spr_monster/Spr_monster.yy",},"order":15,},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":19,},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},"order":3,},
+    {"id":{"name":"Oenemy","path":"objects/Oenemy/Oenemy.yy",},"order":8,},
     {"id":{"name":"Obj_player","path":"objects/Obj_player/Obj_player.yy",},"order":0,},
     {"id":{"name":"Obj_bullet","path":"objects/Obj_bullet/Obj_bullet.yy",},"order":3,},
     {"id":{"name":"Sprite6","path":"sprites/Sprite6/Sprite6.yy",},"order":17,},
