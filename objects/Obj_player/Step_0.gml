@@ -1,6 +1,6 @@
 move_by(spd, maxspd);
 
-image_angle = point_direction(x,y,mouse_x,mouse_y);
+image_angle += angle_difference(point_direction(x,y,mouse_x,mouse_y), image_angle) / 4;
 
 if delay > 0
 delay--;
@@ -18,7 +18,7 @@ if mouse_check_button(mb_left){
 		it.dmg = critic;
 		it.image_angle = i_a;
 		it.direction = i_a;
-		it.speed = 20;
+		it.speed = 30;
 	}
 	maxspd = maxspd_*0.5;
 }

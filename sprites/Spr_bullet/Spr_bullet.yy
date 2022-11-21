@@ -10,8 +10,8 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 0,
-  "bbox_right": 52,
+  "bbox_left": 31,
+  "bbox_right": 32,
   "bbox_top": 0,
   "bbox_bottom": 1,
   "HTile": false,
@@ -68,7 +68,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Fatal Digits",
-    "path": "Fatal Digits.yyp",
+    "name": "스프라이트",
+    "path": "folders/스프라이트.yy",
   },
 }

@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "스프라이트",
-    "path": "folders/스프라이트.yy",
+    "name": "로고 및 UI",
+    "path": "folders/스프라이트/로고 및 UI.yy",
   },
 }

@@ -70,7 +70,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Fatal Digits",
-    "path": "Fatal Digits.yyp",
+    "name": "로고 및 UI",
+    "path": "folders/스프라이트/로고 및 UI.yy",
   },
 }

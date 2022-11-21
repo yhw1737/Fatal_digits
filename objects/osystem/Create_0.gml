@@ -1,5 +1,4 @@
 randomize();
-depth = -400
 width = sprite_width
 height = sprite_height
 noise_range = 8;
@@ -10,4 +9,5 @@ active = false;
 c = 0;
 objselected = false;
 selection = false;
-obj = noone;
+changing = false;
+obj = 0;

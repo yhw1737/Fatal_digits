@@ -1,4 +1,7 @@
 friction = 1;
+
+type = 0;
+
 delay = 0;
 attspd = 0.2*room_speed;
 maxspd = 4;

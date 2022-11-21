@@ -74,7 +74,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Fatal Digits",
-    "path": "Fatal Digits.yyp",
+    "name": "스프라이트",
+    "path": "folders/스프라이트.yy",
   },
 }
