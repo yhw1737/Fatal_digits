@@ -10,4 +10,7 @@ c = 0;
 objselected = false;
 selection = false;
 changing = false;
+charcn = false;
 obj = 0;
+
+maxobj = 3;

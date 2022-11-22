@@ -1,2 +1,3 @@
 event_inherited();
-move_towards_point(Obj_player.x,Obj_player.y,2);
+image_angle += angle_difference(point_direction(x,y,Obj_player.x,Obj_player.y), image_angle) / 4;
+direction = image_angle;

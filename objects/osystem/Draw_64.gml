@@ -4,20 +4,62 @@
 if selection {
 	var cx,cy;
 	draw_sprite(sLogo_110,0,0,0);
-	draw_sprite(Spr_player, obj, display_get_gui_width()/2, display_get_gui_height()/2);
+	if alarm[0] == -1 && alarm[1] == -1{
+		draw_sprite(Spr_player, obj, display_get_gui_width()/2, display_get_gui_height()/2);
+	}
+	else {
+		var v;
+		for (var i = 0; i < sprite_get_height(Spr_player); i+=v) {
+			v = choose(10,15,25);
+			if irandom(15) = 0{
+				draw_sprite_part(Spr_player, obj, 0, i, sprite_get_width(Spr_player), v, display_get_gui_width()/2 - sprite_get_width(Spr_player)/2 + choose(-1,1)*(irandom(20)+power(max(irandom(100)-85,0),2)), display_get_gui_height()/2 - sprite_get_height(Spr_player)/2 + i)
+			}
+			else {
+				draw_sprite_part(Spr_player, obj, 0, i, sprite_get_width(Spr_player), v, display_get_gui_width()/2 - sprite_get_width(Spr_player)/2, display_get_gui_height()/2 - sprite_get_height(Spr_player)/2 + i)
+			}
+		}
+	}
 	draw_sprite(Sprite11, 0, display_get_gui_width()-200,display_get_gui_height()/2);
-	draw_sprite(Sprite12, 0, display_get_gui_width()/2,display_get_gui_height()-200);
 	draw_sprite_ext(Sprite11, 0, 200,display_get_gui_height()/2,-1,1,0,c_white,1);
 	draw_line_width(32,150,display_get_gui_width()-32,150,3);
 	cx = display_get_gui_width()/2;
 	cy = display_get_gui_height()-200;
+	if mouse_x >= cx-157 && mouse_x <= cx+157 && mouse_y >= cy-36 && mouse_y <= cy+36{
+		var v;
+		for (var i = 0; i < sprite_get_height(Sprite12); i+=v) {
+			v = choose(10,15,25);
+			if irandom(15) = 0{
+				draw_sprite_part(Sprite12, 0, 0, i, sprite_get_width(Sprite12), v, display_get_gui_width()/2 - sprite_get_width(Sprite12)/2 + choose(-1,1)*(irandom(15)+power(max(irandom(100)-90,0),2)), display_get_gui_height() - 200 - sprite_get_height(Sprite12)/2 + i)
+			}
+			else {
+				draw_sprite_part(Sprite12, 0, 0, i, sprite_get_width(Sprite12), v, display_get_gui_width()/2 - sprite_get_width(Sprite12)/2, display_get_gui_height() - 200 - sprite_get_height(Sprite12)/2 + i)
+			}
+		}
+	}
+	else {
+		draw_sprite(Sprite12, 0, display_get_gui_width()/2,display_get_gui_height()-200);
+	}
 	if mouse_check_button_pressed(mb_left){
-		if mouse_x >= cx-207 && mouse_x <= cx+207 && mouse_y >= cy-87 && mouse_y <= cy+87{
+		cx = display_get_gui_width()/2;
+		cy = display_get_gui_height()-200;
+		if mouse_x >= cx-157 && mouse_x <= cx+157 && mouse_y >= cy-36 && mouse_y <= cy+36{
 			objselected = true;
 			selection = false;
 			instance_activate_all();
-			Obj_player.type = obj;
-			Change(Obj_player,obj);
+			Obj_player.image_index = obj;
+			Obj_player.type_ = obj;
+		}
+		cx = 200;
+		cy = display_get_gui_height()/2;
+		if mouse_x >= cx-46 && mouse_x <= cx+46 && mouse_y >= cy-65 && mouse_y <= cy+65{
+			charcn = true;
+			alarm[0] = room_speed*0.5;
+		}
+		cx = display_get_gui_width() - 200;
+		cy = display_get_gui_height()/2;
+		if mouse_x >= cx-46 && mouse_x <= cx+46 && mouse_y >= cy-65 && mouse_y <= cy+65{
+			charcn = true;
+			alarm[1] = room_speed*0.5;
 		}
 	}
 }

@@ -26,3 +26,11 @@ else{
 	maxspd = maxspd_;
 }
 //
+
+if exp_c >= exp_m{
+	exp_c-=exp_m;
+	level++;
+	exp_m*=1.3;
+	floor(exp_m);
+	//선택
+}

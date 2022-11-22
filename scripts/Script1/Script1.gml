@@ -1,16 +1,4 @@
-function Change(obj, int){
-	switch(int){
-		case 0:
-		break;
-		case 1:
-		break;
-		case 2:
-		break;
-		case 3:
-		break;
-		obj.image_index = int;
-	}
-}
+
 function Accuracy(int){
 	return 1500/(100+int);
 }
@@ -53,4 +41,34 @@ function move_by(spd,maxspd){
 	else {
 		friction = 0.25;
 	}
+}
+//
+function draw_hp(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7) {
+	//draw_hp(hp, max, x, y, radius, thickness, color1, color2);
+	var _i, _x, _y, _r, _t;
+
+	_x = argument2;
+	_y = argument3;
+	_r = argument4;
+	_t = argument5;
+
+	draw_set_color(argument6);
+	draw_set_alpha(1);
+
+	draw_primitive_begin(pr_trianglestrip);
+
+	for (_i = 0; _i <= round(360 *(argument0 /argument1)); _i += 1) {
+	    draw_vertex(_x +lengthdir_x(_r, 90 -_i), _y +lengthdir_y(_r, 90 -_i));
+	    draw_vertex(_x +lengthdir_x(_r -_t, 90 -_i), _y +lengthdir_y(_r -_t, 90 -_i));
+	}
+
+	draw_primitive_end();
+
+	draw_set_color(argument7);
+	draw_set_alpha(1);
+	draw_circle(_x, _y, _r, true);
+	draw_circle(_x, _y, _r -_t, true);
+
+
+
 }
