@@ -11,7 +11,7 @@ if selection {
 		var v;
 		for (var i = 0; i < sprite_get_height(Spr_player); i+=v) {
 			v = choose(10,15,25);
-			if irandom(15) = 0{
+			if irandom(room_speed/4) = 0{
 				draw_sprite_part(Spr_player, obj, 0, i, sprite_get_width(Spr_player), v, display_get_gui_width()/2 - sprite_get_width(Spr_player)/2 + choose(-1,1)*(irandom(20)+power(max(irandom(100)-85,0),2)), display_get_gui_height()/2 - sprite_get_height(Spr_player)/2 + i)
 			}
 			else {
@@ -28,7 +28,7 @@ if selection {
 		var v;
 		for (var i = 0; i < sprite_get_height(Sprite12); i+=v) {
 			v = choose(10,15,25);
-			if irandom(15) = 0{
+			if irandom(room_speed/4) = 0{
 				draw_sprite_part(Sprite12, 0, 0, i, sprite_get_width(Sprite12), v, display_get_gui_width()/2 - sprite_get_width(Sprite12)/2 + choose(-1,1)*(irandom(15)+power(max(irandom(100)-90,0),2)), display_get_gui_height() - 200 - sprite_get_height(Sprite12)/2 + i)
 			}
 			else {
@@ -37,7 +37,9 @@ if selection {
 		}
 	}
 	else {
+		draw_set_alpha(0.5);
 		draw_sprite(Sprite12, 0, display_get_gui_width()/2,display_get_gui_height()-200);
+		draw_set_alpha(1);
 	}
 	if mouse_check_button_pressed(mb_left){
 		cx = display_get_gui_width()/2;
@@ -48,6 +50,54 @@ if selection {
 			instance_activate_all();
 			Obj_player.image_index = obj;
 			Obj_player.type_ = obj;
+			switch(obj){
+				case 1:
+					with(Obj_player){
+						attspd = 1.5*room_speed;
+						maxspd = 180/room_speed;
+						spd = maxspd*0.035;
+						maxspd_ = maxspd;
+						accuracy = 0;
+						dmg = 20;
+						hp = 150;
+						maxhp = hp;
+						def = 0;
+						critdmg = 1;
+						critper = 0;
+						b_n = 5;
+					}
+				break;
+				case 2:
+					with(Obj_player){
+						attspd = 1*room_speed;
+						maxspd = 270/room_speed;
+						spd = maxspd*0.05;
+						maxspd_ = maxspd;
+						accuracy = 0;
+						dmg = 8;
+						hp = 100;
+						maxhp = hp;
+						def = 0;
+						critdmg = 1.1;
+						critper = 10;
+					}
+				break;
+				case 3:
+					with(Obj_player){
+						attspd = 1.5*room_speed;
+						maxspd = 180/room_speed;
+						spd = maxspd*0.035;
+						maxspd_ = maxspd;
+						accuracy = 0;
+						dmg = 30;
+						hp = 100;
+						maxhp = hp;
+						def = 0;
+						critdmg = 2;
+						critper = 10;
+					}
+				break;
+			}
 		}
 		cx = 200;
 		cy = display_get_gui_height()/2;
@@ -68,9 +118,9 @@ if selection {
 var dmouse_x = device_mouse_x_to_gui(0);
 var dmouse_y = device_mouse_y_to_gui(0);
 
-if room == Room1{
+if room == Room1 && objselected && global.abilsel = false{
 	for (var i = 0; i < height; i+=8) {
-		if irandom(25) == 0 {
+		if irandom(room_speed/3) == 0 {
 			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8 + random_range(-noise_range, noise_range), dmouse_y - 7 + i)
 		}
 		else {
@@ -80,11 +130,11 @@ if room == Room1{
 }
 else {
 	for (var i = 0; i < height; i+=8) {
-		if irandom(25) == 0 {
-			draw_sprite_part(Sprite7, 0, 0, i, width, 12, x + random_range(-noise_range, noise_range), y+ i)
+		if irandom(room_speed/3) == 0 {
+			draw_sprite_part(Sprite7, 0, 0, i, width, 12, dmouse_x + random_range(-noise_range, noise_range), dmouse_y+ i)
 		}
 		else {
-			draw_sprite_part(Sprite7, 0, 0, i, width, 12, x, y + i)
+			draw_sprite_part(Sprite7, 0, 0, i, width, 12, dmouse_x, dmouse_y + i)
 		}
 	}
 }

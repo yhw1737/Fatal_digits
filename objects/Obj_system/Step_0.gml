@@ -1,3 +1,4 @@
+if Obj_player.dead = false && global.abilsel = false {
 var xx,yy,pdst,pdir;
 pdst = point_distance(Obj_player.x,Obj_player.y,mouse_x,mouse_y);
 pdir = point_direction(Obj_player.x,Obj_player.y,mouse_x,mouse_y);
@@ -6,7 +7,7 @@ yy = Obj_player.y+lengthdir_y(pdst/5,pdir);
 x += (xx - x)/20;
 y += (yy - y)/20;
 
-var odd = irandom(300-diff);
+var odd = irandom(400-diff);
 if odd == 0{
 	xx = random(room_width);
 	yy = random(room_height);
@@ -36,4 +37,5 @@ if odd == 2 && Obj_player.level >= 2 && irandom(3) == 0{
 		yy = random(room_height);
 	}
 	instance_create_depth(xx,yy,0,Obj_monster3);
+}
 }

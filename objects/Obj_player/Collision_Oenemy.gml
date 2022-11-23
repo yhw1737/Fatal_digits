@@ -1,3 +1,4 @@
+if global.abilsel = false{
 if hit = false{
 	hp -= 25;
 	hit = true;
@@ -5,4 +6,5 @@ if hit = false{
 }
 if hp <= 0{
 	dead = true;
+}
 }

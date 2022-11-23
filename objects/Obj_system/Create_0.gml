@@ -10,6 +10,8 @@ repeat(2){
 	}
 	instance_create_depth(xx,yy,0,Obj_monster);
 }
-re = room_speed*20;
+re = room_speed*10;
 alarm[0] = re;
 re*=1.5;
+
+global.abilsel = false;

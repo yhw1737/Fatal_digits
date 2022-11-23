@@ -1,1 +1,1 @@
-hit = room_speed*0.3
+hit = room_speed*0.3;

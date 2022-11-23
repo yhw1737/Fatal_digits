@@ -12,7 +12,7 @@ else {
 	for (var i = 0; i < 72; i+=v) {
 		v = irandom_range(2,5);
 		var r_r;
-		if irandom(15) = 0{
+		if irandom(room_speed/4) = 0{
 			r_r = random_range(-10,10);
 		}
 		else {
@@ -24,3 +24,8 @@ else {
 	}
 	surface_free(surf);
 }
+draw_set_alpha(0.2);
+draw_rectangle(960, 540, room_width-960, room_height-540, true);
+draw_set_alpha(1);
+x = clamp(x, 960, room_width-960);
+y = clamp(y, 540, room_width-540);
