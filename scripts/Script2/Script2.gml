@@ -4,28 +4,31 @@ function AttSpd(int, int2){
 	with(Obj_player){
 		if int = 0 {
 			if attspd >= 0.1*room_speed {
-				attspd -= int2*(0.025*room_speed);
+				attspd -= int2*(0.02*room_speed);
 			}
 			else {
-				attspd -= int2*((0.05*room_speed)/(0.1*room_speed-attspd));
+				attspd -= int2*((0.04*room_speed)/(0.1*room_speed-attspd));
 			}
 		}
 		else {
-			attspd+= int2*0.025;
+			attspd+= int2*0.02;
 		}
 	}
 }
-function Accuracy(int, int2){
+function Accuracy_(int, int2){
 	with(Obj_player){
 		if int = 0 {
-			accuracy += int2*30;
+			accuracy += int2*20;
 		}
 		else {
-			if accuracy >= 0 {
+			if accuracy >= 100 {
+				accuracy -= int2*20;
+			}
+			else if accuracy >= 0 {
 				accuracy -= int2*10;
 			}
-			else {
-				accuracy += int2*(50/(accuracy));
+			else if accuracy >= -50 {
+				accuracy -= int2*5;
 			}
 		}
 	}
@@ -62,8 +65,8 @@ function Move(int, int2){
 function Crit_Chance(int, int2){
 	with(Obj_player){
 		if int = 0 {
-			critper+=int2*2;
-			critper*=int2*1.5;
+			critper+=int2*1;
+			critper*=int2*1.2;
 		}
 		else {
 			critper-=int2*2;

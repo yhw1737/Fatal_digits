@@ -30,3 +30,5 @@ exp_m = 5;
 level = 0;
 
 dead = false;
+
+aaa[sprite_get_number(Sprite15)] = 0;

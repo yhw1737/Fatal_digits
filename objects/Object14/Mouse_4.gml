@@ -1,9 +1,9 @@
 var up = 0, down = 1;
-a[image_index]++;
+Obj_player.aaa[image_index]++;
 switch(image_index){
 	case 0:
 		AttSpd(up, 1);
-		Accuracy(up, 1);
+		Accuracy_(up, 1);
 	break;
 	case 1:
 		Dmg(up, 1);
@@ -15,7 +15,7 @@ switch(image_index){
 		Dmg(down, 1);
 	break;
 	case 3:
-		Accuracy(up, 1);
+		Accuracy_(up, 1);
 		Dmg(up, 1);
 		Move(down, 1);
 	break;
