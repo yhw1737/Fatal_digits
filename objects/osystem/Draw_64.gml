@@ -58,13 +58,16 @@ if selection {
 						spd = maxspd*0.035;
 						maxspd_ = maxspd;
 						accuracy = 0;
-						dmg = 20;
+						dmg = 15;
 						hp = 150;
 						maxhp = hp;
 						def = 0;
+						recov = 0;
 						critdmg = 1;
 						critper = 0;
 						b_n = 5;
+						dmg_ = dmg;
+						attspd_ = attspd;
 					}
 				break;
 				case 2:
@@ -78,8 +81,11 @@ if selection {
 						hp = 100;
 						maxhp = hp;
 						def = 0;
+						recov = 0;
 						critdmg = 1.1;
 						critper = 10;
+						dmg_ = dmg;
+						attspd_ = attspd;
 					}
 				break;
 				case 3:
@@ -93,8 +99,11 @@ if selection {
 						hp = 100;
 						maxhp = hp;
 						def = 0;
+						recov = 0;
 						critdmg = 2;
 						critper = 10;
+						dmg_ = dmg;
+						attspd_ = attspd;
 					}
 				break;
 			}

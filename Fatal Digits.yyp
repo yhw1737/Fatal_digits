@@ -3,6 +3,7 @@
   "resourceVersion": "1.6",
   "name": "Fatal Digits",
   "resources": [
+    {"id":{"name":"Script2","path":"scripts/Script2/Script2.yy",},"order":1,},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"order":4,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":3,},
     {"id":{"name":"Sprite12","path":"sprites/Sprite12/Sprite12.yy",},"order":6,},
