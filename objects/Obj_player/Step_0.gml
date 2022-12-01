@@ -36,6 +36,10 @@ if mouse_check_button(mb_left){
 		case 2:
 			var target = instance_in_range(10,400,90,Oenemy);
 			if target != noone {
+				for(var i=1;i<10;i++){
+					objobj[i,0] = noone;
+					objobj[i,1] = noone;
+				}
 				eff = room_speed*0.25;
 				var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
 				it.dmg = critic;
