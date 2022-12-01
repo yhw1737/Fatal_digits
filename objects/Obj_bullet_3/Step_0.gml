@@ -1,6 +1,3 @@
-if global.abilsel {
-	speed = 0;
-}
-else {
-	speed = spd;
+if !place_meeting(x,y,Oenemy){
+	instance_destroy();
 }

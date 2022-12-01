@@ -1,8 +1,10 @@
 friction = 1;
 
-type_ = 0;
-
 delay = 0.2*room_speed;
+delay_2 = 0.2*room_speed;
+delay_3 = 0.2*room_speed;
+delay_4 = 0.2*room_speed;
+
 attspd = 0.2*room_speed;
 maxspd = 240/room_speed;
 spd = maxspd*0.05;
@@ -22,6 +24,7 @@ b_n = 1;
 hit = false;
 
 plevel = 3;
+qactive = false;
 
 eff = 0;
 

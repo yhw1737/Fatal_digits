@@ -49,7 +49,6 @@ if selection {
 			selection = false;
 			instance_activate_all();
 			Obj_player.image_index = obj;
-			Obj_player.type_ = obj;
 			switch(obj){
 				case 1:
 					with(Obj_player){
@@ -94,7 +93,7 @@ if selection {
 						maxspd = 180/room_speed;
 						spd = maxspd*0.035;
 						maxspd_ = maxspd;
-						accuracy = 0;
+						accuracy = 1400;
 						dmg = 30;
 						hp = 100;
 						maxhp = hp;

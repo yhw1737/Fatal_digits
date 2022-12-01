@@ -11,7 +11,7 @@ if mouse_check_button(mb_left){
 			critic*=critdmg;
 		}
 		delay = attspd;
-		switch(type_){
+		switch(image_index){
 		case 0:
 			var i_a = image_angle+random_range(-Accuracy(accuracy),Accuracy(accuracy));
 			var it = instance_create_depth(x,y,0,Obj_bullet);
@@ -34,7 +34,7 @@ if mouse_check_button(mb_left){
 			}
 		break;
 		case 2:
-			var target = instance_in_range(10,400,90,Oenemy);
+			var target = instance_in_range(5,450,45,Oenemy);
 			if target != noone {
 				for(var i=1;i<10;i++){
 					objobj[i,0] = noone;
@@ -60,10 +60,11 @@ if mouse_check_button(mb_left){
 			}
 		break;
 		case 3:
+			var i_a = image_angle+random_range(-Accuracy(accuracy),Accuracy(accuracy));
 			var it = instance_create_depth(x,y,0,Obj_bullet_4);
 			it.dmg = critic;
-			it.image_angle = image_angle;
-			it.direction = image_angle;
+			it.image_angle = i_a;
+			it.direction = i_a;
 			it.speed = 2250/room_speed;
 			it.spd = 2250/room_speed;
 		break;
@@ -72,6 +73,45 @@ if mouse_check_button(mb_left){
 }
 else{
 	maxspd = maxspd_;
+}
+//skill
+if mouse_check_button_pressed(mb_right){
+	if delay_2 <= 0 {
+		switch(image_index){
+			case 0:
+			if level >= 14 {
+				repeat(8){
+					var it = instance_create_depth(x,y,0,Obj_udo);
+					var rd = random(360);
+					it.direction = rd;
+					it.image_angle = rd;
+					it.speed = 3;
+					var critic = 10+4*floor(min(3,(level-14))/3);
+					if irandom(99) < critper{
+						critic*=critdmg;
+					}
+					it.dmg = critic;
+					show_message(critic);
+				}
+				delay_2 = room_speed*8;
+			}
+			break;
+		}
+	}
+}
+if keyboard_check_pressed(ord("E")){
+	if delay_3 <= 0 {
+		switch(image_index){
+			case 0:
+			if level >= 0 {
+				dead = true;
+				hit = room_speed*1.5;
+				alarm[1] = room_speed*1.5;
+				delay_3 = room_speed*(15-min(4,(level-7)));
+			}
+			break;
+		}
+	}
 }
 //
 
@@ -98,10 +138,19 @@ if exp_c >= exp_m{
 		}
 		
 	}
+	if image_index = 0 {
+		recov+=0.08;
+	}
 }
 
 if delay > 0
 delay--;
+if delay_2 > 0
+delay_2--;
+if delay_3 > 0
+delay_3--;
+if delay_4 > 0
+delay_4--;
 
 if eff > 0{
 	eff--;

@@ -1,3 +1,4 @@
+draw_set_alpha(0.75);
 var _array_length = array_length( trail_array );
 	if ( _array_length ) {
 		draw_primitive_begin( pr_trianglestrip );
@@ -27,3 +28,5 @@ var _array_length = array_length( trail_array );
 		};
 		draw_primitive_end();
 	};
+	draw_set_alpha(1);
+	draw_self();

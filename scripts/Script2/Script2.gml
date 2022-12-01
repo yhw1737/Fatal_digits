@@ -51,11 +51,13 @@ function Dmg(int, int2){
 function Move(int, int2){
 	with(Obj_player){
 		if int = 0 {
+			maxspd = maxspd_;
 			maxspd+=int2*(12/room_speed);
 			spd+=int2*(0.6/room_speed);
 			maxspd_ = maxspd;
 		}
 		else {
+			maxspd = maxspd_;
 			maxspd-=int2*(10/room_speed);
 			spd-=int2*(0.5/room_speed);
 			maxspd_= maxspd;

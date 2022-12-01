@@ -4,6 +4,7 @@
   "name": "Fatal Digits",
   "resources": [
     {"id":{"name":"Script2","path":"scripts/Script2/Script2.yy",},"order":1,},
+    {"id":{"name":"Object18","path":"objects/Object18/Object18.yy",},"order":17,},
     {"id":{"name":"Sprite18","path":"sprites/Sprite18/Sprite18.yy",},"order":11,},
     {"id":{"name":"Sprite8","path":"sprites/Sprite8/Sprite8.yy",},"order":4,},
     {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},"order":3,},
@@ -40,7 +41,9 @@
     {"id":{"name":"Script1","path":"scripts/Script1/Script1.yy",},"order":0,},
     {"id":{"name":"oLogo6","path":"objects/oLogo6/oLogo6.yy",},"order":5,},
     {"id":{"name":"Obj_monster3","path":"objects/Obj_monster3/Obj_monster3.yy",},"order":11,},
+    {"id":{"name":"Sprite19","path":"sprites/Sprite19/Sprite19.yy",},"order":14,},
     {"id":{"name":"Obj_bullet_2","path":"objects/Obj_bullet_2/Obj_bullet_2.yy",},"order":12,},
+    {"id":{"name":"Object1819","path":"objects/Object1819/Object1819.yy",},"order":18,},
     {"id":{"name":"Room3","path":"rooms/Room3/Room3.yy",},"order":2,},
     {"id":{"name":"Spr_bullet","path":"sprites/Spr_bullet/Spr_bullet.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
