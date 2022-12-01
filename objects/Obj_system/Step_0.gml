@@ -15,4 +15,5 @@ if odd == 0{
 		yy = random(room_height);
 	}
 	instance_create_depth(xx,yy,0,Obj_monster);
+	instance_create_depth(xx,yy,0,Obj_boss1);
 }

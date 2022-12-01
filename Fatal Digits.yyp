@@ -9,6 +9,7 @@
     {"id":{"name":"oLogo","path":"objects/oLogo/oLogo.yy",},"order":4,},
     {"id":{"name":"Obj_system","path":"objects/Obj_system/Obj_system.yy",},"order":1,},
     {"id":{"name":"Sprite16","path":"sprites/Sprite16/Sprite16.yy",},"order":15,},
+    {"id":{"name":"Obj_playerspace","path":"objects/Obj_playerspace/Obj_playerspace.yy",},"order":12,},
     {"id":{"name":"Spr_player","path":"sprites/Spr_player/Spr_player.yy",},"order":6,},
     {"id":{"name":"failed_expbar","path":"sprites/failed_expbar/failed_expbar.yy",},"order":11,},
     {"id":{"name":"sLogo_110","path":"sprites/sLogo_110/sLogo_110.yy",},"order":1,},
