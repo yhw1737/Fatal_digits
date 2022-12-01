@@ -45,7 +45,8 @@ else{
 if exp_c >= exp_m{
 	exp_c-=exp_m;
 	level++;
-	exp_m*=1.3;
+	exp_m*=1.1;
+	exp_m+=1;
 	floor(exp_m);
 	global.abilsel = true;
 	var a = -1,b = -1;

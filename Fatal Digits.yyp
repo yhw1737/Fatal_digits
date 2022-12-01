@@ -12,11 +12,13 @@
     {"id":{"name":"spr_monster2","path":"sprites/spr_monster2/spr_monster2.yy",},"order":6,},
     {"id":{"name":"Spr_player","path":"sprites/Spr_player/Spr_player.yy",},"order":3,},
     {"id":{"name":"Obj_exp","path":"objects/Obj_exp/Obj_exp.yy",},"order":9,},
+    {"id":{"name":"Obj_udo","path":"objects/Obj_udo/Obj_udo.yy",},"order":14,},
     {"id":{"name":"sLogo_110","path":"sprites/sLogo_110/sLogo_110.yy",},"order":1,},
     {"id":{"name":"spr_monster3","path":"sprites/spr_monster3/spr_monster3.yy",},"order":7,},
     {"id":{"name":"Room2","path":"rooms/Room2/Room2.yy",},"order":1,},
     {"id":{"name":"Spr_monster","path":"sprites/Spr_monster/Spr_monster.yy",},"order":2,},
     {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},"order":5,},
+    {"id":{"name":"Spr_udo","path":"sprites/Spr_udo/Spr_udo.yy",},"order":14,},
     {"id":{"name":"Object14","path":"objects/Object14/Object14.yy",},"order":13,},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":4,},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},"order":0,},
@@ -42,9 +44,9 @@
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
     {"name":"macOS","path":"options/mac/options_mac.yy",},
-    {"name":"Main","path":"options/main/options_main.yy",},
     {"name":"Windows","path":"options/windows/options_windows.yy",},
     {"name":"operagx","path":"options/operagx/options_operagx.yy",},
+    {"name":"Main","path":"options/main/options_main.yy",},
   ],
   "defaultScriptType": 1,
   "isEcma": false,
@@ -82,6 +84,6 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.9.1.51",
+    "IDEVersion": "2022.11.0.54",
   },
 }
