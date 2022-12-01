@@ -33,7 +33,25 @@ if mouse_check_button(mb_left){
 				it.spd = 900/room_speed;
 			}
 		break;
-			
+		case 2:
+			var target = instance_in_range(10,100,90,Oenemy);
+			if target != noone {
+				var it = instance_create_depth(x,y,0,Obj_bullet_3);
+				it.dmg = critic;
+				it.image_angle = image_angle;
+				it.direction = image_angle;
+				it.speed = 1200/room_speed;
+				it.spd = 1200/room_speed;
+			}
+		break;
+		case 3:
+			var it = instance_create_depth(x,y,0,Obj_bullet_4);
+			it.dmg = critic;
+			it.image_angle = image_angle;
+			it.direction = image_angle;
+			it.speed = 2250/room_speed;
+			it.spd = 2250/room_speed;
+		break;
 		}
 	}
 }

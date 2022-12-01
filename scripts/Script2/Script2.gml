@@ -83,3 +83,29 @@ function Crit_Dmg(int, int2){
 		}
 	}
 }
+function instance_in_range(argument0, argument1, argument2, argument3){
+	/// instance_in_range(min, max, fov, obj)
+	var target, D, minimum, theta, delta;
+	target = noone;
+	minimum = argument1;
+
+	with argument3 {
+
+	  if id == other.id then continue;
+
+	  D = point_distance(x, y, other.x, other.y);
+
+	  if D < argument0 {
+	    target = id;
+	  } else {
+	    theta = point_direction(other.x, other.y, x, y);
+	    delta = min(abs(other.image_angle - theta), 360 - abs(other.image_angle - theta));
+	    if (D <= minimum) and (delta <= 0.5 * argument2) {
+	      minimum = D;
+	      target = id;
+	    }
+	  }
+	}
+
+	return target;
+}
