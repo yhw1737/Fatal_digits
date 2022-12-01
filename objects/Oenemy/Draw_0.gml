@@ -3,8 +3,8 @@ if hp > maxhp/2 {
 }
 else {
 	var v, w, h;
-	w = 144;
-	h = 144;
+	w = sprite_width*1.1;
+	h = sprite_height*1.1;
 	var surf = surface_create(w,h);
 	surface_set_target(surf);
 	draw_sprite_ext(sprite_index,image_index, w/2 - 3,h/2, image_xscale, image_yscale, image_angle, c_aqua, image_alpha);

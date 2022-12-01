@@ -9,5 +9,3 @@ if Obj_player.dead = false && global.abilsel = false {
 else {
 	speed = 0;
 }
-if hit > 0
-	hit--;
