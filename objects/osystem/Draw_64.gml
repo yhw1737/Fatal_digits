@@ -72,12 +72,12 @@ if selection {
 				break;
 				case 2:
 					with(Obj_player){
-						attspd = 1*room_speed;
+						attspd = 0.25*room_speed;
 						maxspd = 270/room_speed;
 						spd = maxspd*0.05;
 						maxspd_ = maxspd;
 						accuracy = 0;
-						dmg = 8;
+						dmg = 2.5;
 						hp = 100;
 						maxhp = hp;
 						def = 0;

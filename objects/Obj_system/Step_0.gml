@@ -7,7 +7,7 @@ yy = Obj_player.y+lengthdir_y(pdst/5,pdir);
 x += (xx - x)/40;
 y += (yy - y)/40;
 
-var odd = irandom(500-diff);
+var odd = irandom(max(500-diff, 100));
 if odd == 0{
 	xx = random(room_width);
 	yy = random(room_height);

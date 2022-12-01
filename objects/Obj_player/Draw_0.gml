@@ -1,3 +1,10 @@
+if eff > 0 {
+	for(var i=0;i<9;i++){
+		if objobj[i+1,0] != noone{
+			draw_line(objobj[i,0],objobj[i,1],objobj[i+1,0],objobj[i+1,1]);
+		}
+	}
+}
 if hit = false{
 	draw_self();
 }

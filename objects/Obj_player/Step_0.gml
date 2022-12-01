@@ -34,14 +34,25 @@ if mouse_check_button(mb_left){
 			}
 		break;
 		case 2:
-			var target = instance_in_range(10,100,90,Oenemy);
+			var target = instance_in_range(10,400,90,Oenemy);
 			if target != noone {
-				var it = instance_create_depth(x,y,0,Obj_bullet_3);
+				eff = room_speed*0.25;
+				var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
 				it.dmg = critic;
-				it.image_angle = image_angle;
-				it.direction = image_angle;
-				it.speed = 1200/room_speed;
-				it.spd = 1200/room_speed;
+				instance_deactivate_object(target);
+				objobj[1,0] = target.x;
+				objobj[1,1] = target.y;
+				for(var i=1;i<plevel;i++){
+					target = instance_nearest(it.x,it.y,Oenemy);
+					if !instance_exists(target) break;
+					if point_distance(x,y,target.x,target.y) > 400 break;
+					var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
+					it.dmg = critic;
+					objobj[i+1,0] = target.x;
+					objobj[i+1,1] = target.y;
+					instance_deactivate_object(target);
+				}
+				instance_activate_object(Oenemy);
 			}
 		break;
 		case 3:
@@ -87,6 +98,18 @@ if exp_c >= exp_m{
 
 if delay > 0
 delay--;
+
+if eff > 0{
+	eff--;
+}
+else{
+	for(var i=1;i<10;i++){
+		objobj[i,0] = noone;
+		objobj[i,1] = noone;
+	}
+}
+objobj[0,0] = x;
+objobj[0,1] = y;
 
 }
 else {

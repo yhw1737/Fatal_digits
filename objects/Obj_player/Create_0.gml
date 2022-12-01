@@ -21,6 +21,16 @@ b_n = 1;
 
 hit = false;
 
+plevel = 3;
+
+eff = 0;
+
+for(var i=0;i<10;i++){
+	for(var j=0;j<2;j++){
+		objobj[i, j] = noone;
+	}
+}
+
 image_speed = 0;
 image_xscale = 0.25;
 image_yscale = 0.25;

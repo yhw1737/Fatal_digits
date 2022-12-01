@@ -10,8 +10,8 @@ while(point_distance(xx,yy,x,y) <= 1400 || point_distance(xx,yy,x,y) >= 1700)
 }
 instance_create_depth(xx,yy,0,Obj_monster);
 //
-re = room_speed*10;
+re = room_speed*15;
 alarm[0] = re;
-re*=1.5;
+re*=1.25;
 
 global.abilsel = false;
