@@ -10,14 +10,14 @@ switch(image_index){
 		AttSpd(down, 1);
 	break;
 	case 2:
-		Move(up, 1);
+		Move(up, 1.8);
 		Crit_Chance(up, 1);
 		Dmg(down, 1);
 	break;
 	case 3:
 		Accuracy_(up, 1);
 		Dmg(up, 1);
-		Move(down, 1);
+		Move(down, 0.6);
 	break;
 	case 4:
 		Crit_Chance(up, 0.8);
