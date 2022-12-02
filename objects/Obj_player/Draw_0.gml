@@ -5,7 +5,7 @@ if eff > 0 {
 		}
 	}
 }
-if hit = false{
+if hit <= 0{
 	draw_self();
 }
 else {
@@ -30,6 +30,7 @@ else {
 		draw_set_alpha(1);
 	}
 	surface_free(surf);
+	draw_hp(hp, maxhp, x, y, 64, 8, c_white, c_white);
 }
 draw_set_alpha(0.2);
 draw_rectangle(960, 540, room_width-960, room_height-540, true);

@@ -21,7 +21,8 @@ critdmg = 1.2;
 critper = 5;
 b_n = 1;
 
-hit = false;
+hit = 0;
+alarm_[0] = -1;
 
 plevel = 3;
 qactive = false;
