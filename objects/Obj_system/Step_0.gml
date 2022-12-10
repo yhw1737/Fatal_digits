@@ -6,7 +6,7 @@ xx = Obj_player.x+lengthdir_x(pdst/5,pdir);
 yy = Obj_player.y+lengthdir_y(pdst/5,pdir);
 x += (xx - x)/40;
 y += (yy - y)/40;
-if level != 10 && level != 20 && level != 30 {
+if Obj_player.level != 10 && Obj_player.level != 20 && Obj_player.level != 30 {
 var odd = irandom(max(500-diff, 100));
 if odd == 0{
 	xx = random(room_width);

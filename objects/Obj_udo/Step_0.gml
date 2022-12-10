@@ -6,6 +6,7 @@ if ( array_length( trail_array ) > 15 ) {
 	array_delete( trail_array, 0, 1 );
 };
 speed = clamp(speed,0,3);
+spd = speed;
 image_angle = direction;
 if global.abilsel {
 	speed = 0;

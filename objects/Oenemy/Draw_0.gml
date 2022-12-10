@@ -1,10 +1,10 @@
 if hp > maxhp/2 {
 	draw_self();
 }
-else {
+else if object_index != Obj_boss01{
 	var v, w, h;
-	w = sprite_width*1.1;
-	h = sprite_height*1.1;
+	w = sprite_width*1.5;
+	h = sprite_height*1.5;
 	var surf = surface_create(w,h);
 	surface_set_target(surf);
 	draw_sprite_ext(sprite_index,image_index, w/2 - 3,h/2, image_xscale, image_yscale, image_angle, c_aqua, image_alpha);
@@ -26,8 +26,12 @@ else {
 	}
 	surface_free(surf);
 }
+else {
+	draw_self();
+}
 if hit > 0 {
 	if irandom(room_speed/12) == 0{
 		draw_sprite(Sprite5,irandom(7),x+random_range(-sprite_width,sprite_width),y+random_range(-sprite_height,sprite_height));
 	}
+	hit--;
 }

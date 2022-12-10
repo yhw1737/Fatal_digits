@@ -34,8 +34,10 @@ if global.abilsel = false {
 				}
 			break;
 			case 2:
-				var target = instance_in_range(5,450,45,Oenemy);
+				var target = instance_in_range(5,450,10,Oenemy);
 				if target != noone {
+					objobj[0,0] = x;
+					objobj[0,1] = y;
 					for(var i=1;i<10;i++){
 						objobj[i,0] = noone;
 						objobj[i,1] = noone;
@@ -43,21 +45,33 @@ if global.abilsel = false {
 					eff = room_speed*0.25;
 					var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
 					it.dmg = critic;
-					instance_deactivate_object(target);
 					objobj[1,0] = target.x;
 					objobj[1,1] = target.y;
-					for(var i=1;i<plevel;i++){
-						target = instance_nearest(it.x,it.y,Oenemy);
-						if !instance_exists(target) break;
-						if point_distance(x,y,target.x,target.y) > 400 break;
+					//instance_deactivate_object(target);
+					for(var i=2;i<=plevel;i++){
+						/*
+						instance_nearest(objobj[i-1,0],objobj[i-1,1],Oenemy);
+						if !instance_exists(target) {break;}
+						if point_distance(x,y,target.x,target.y) > 150 {break;}
 						var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
 						it.dmg = critic;
-						objobj[i+1,0] = target.x;
-						objobj[i+1,1] = target.y;
-						instance_deactivate_object(target);
+						objobj[i,0] = target.x;
+						objobj[i,1] = target.y;
+						*/
+						with(target){
+							target = instance_nearest(200,200,360,Oenemy);
+							if !instance_exists(target) {break;}
+							if point_distance(x,y,target.x,target.y) > 150 {break;}
+							var it = instance_create_depth(target.x,target.y,0,Obj_bullet_3);
+							it.dmg = critic;
+							objobj[i,0] = target.x;
+							objobj[i,1] = target.y;
+						}
+						//instance_deactivate_object(target);
 					}
-					instance_activate_object(Oenemy);
+					//instance_activate_object(Oenemy);
 				}
+				maxspd = maxspd_*0.75;
 			break;
 			case 3:
 				var i_a = image_angle+random_range(-Accuracy(accuracy),Accuracy(accuracy));
@@ -79,7 +93,7 @@ if global.abilsel = false {
 		if delay_2 <= 0 {
 			switch(image_index){
 				case 0:
-				if level >= 14 {
+				if level >= 0 {
 					repeat(8){
 						var it = instance_create_depth(x,y,0,Obj_udo);
 						var rd = random(360);
@@ -91,9 +105,8 @@ if global.abilsel = false {
 							critic*=critdmg;
 						}
 						it.dmg = critic;
-						show_message(critic);
 					}
-					delay_2 = room_speed*8;
+					delay_2 = room_speed*1;
 				}
 				break;
 			}
@@ -118,6 +131,9 @@ if global.abilsel = false {
 	if exp_c >= exp_m{
 		exp_c-=exp_m;
 		level++;
+		if (level % 6 == 0){
+			plevel++;
+		}
 		exp_m*=1.1;
 		exp_m+=1;
 		floor(exp_m);
@@ -158,18 +174,22 @@ if global.abilsel = false {
 	if eff > 0{
 		eff--;
 	}
+	/*
 	else{
 		for(var i=1;i<10;i++){
 			objobj[i,0] = noone;
 			objobj[i,1] = noone;
 		}
 	}
+	*/
 	objobj[0,0] = x;
 	objobj[0,1] = y;
 
-
 	if hp < maxhp {
-		hp+=maxhp*recov;
+		hp+=(maxhp*recov)/room_speed;
+	}
+	else {
+		hp = maxhp;
 	}
 
 	if hit > 0 

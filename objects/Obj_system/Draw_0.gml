@@ -10,3 +10,8 @@ if global.abilsel {
 	draw_set_alpha(1);
 	depth = d;
 }
+else if Obj_system.boss > -1 {
+	if irandom(room_speed/24) == 0{
+		draw_sprite(Sprite5,irandom(7),room_width+random_range(-500,500), room_height+random_range(-500,500));
+	}
+}
