@@ -138,6 +138,26 @@ if room == Room1 && objselected && global.abilsel = false{
 			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8, dmouse_y - 7 + i)
 		}
 	}
+	if object_exists(Obj_player){
+		if Obj_player.dead = true && Obj_player.alarm_[0] == -1{
+			if global.clear{
+				draw_sprite(Sprite24,0,0,0);
+			}
+			else {
+				draw_sprite(Sprite24,1,0,0);
+				draw_set_halign(fa_right);
+				draw_set_font(Font1);
+				draw_text(230, 682, floor(string(100*(Obj_player.level/31))));
+				draw_set_halign(fa_left);
+			}
+			draw_sprite(Spr_player,obj,1920-300,1080/2);
+			if mouse_check_button_pressed(mb_left){
+				if dmouse_x > 189 && dmouse_x < 331 && dmouse_y > 742 && dmouse_y < 882{
+					game_restart();
+				}
+			}
+		}
+	}
 }
 else {
 	for (var i = 0; i < height; i+=8) {

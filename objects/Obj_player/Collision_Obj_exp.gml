@@ -1,4 +1,4 @@
-if global.abilsel = false {
+if global.abilsel = false && (dead = false || (dead = true && alarm_[0] != -1)){
 	exp_c+=other.exp_;
 	if image_index == 0 && level >= 10 {
 		exp_c+=other.exp_*0.25;
