@@ -1,7 +1,7 @@
 if hp > maxhp/2 {
 	draw_self();
 }
-else if object_index != Obj_boss01{
+else if object_index != Obj_boss01 && object_index != Obj_boss02 && object_index != Obj_boss03{
 	var v, w, h;
 	w = sprite_width*1.5;
 	h = sprite_height*1.5;
