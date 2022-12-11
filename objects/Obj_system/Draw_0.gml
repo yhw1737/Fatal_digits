@@ -12,6 +12,9 @@ if global.abilsel {
 }
 else if Obj_system.boss > -1 {
 	if irandom(room_speed/24) == 0{
-		draw_sprite(Sprite5,irandom(7),room_width+random_range(-500,500), room_height+random_range(-500,500));
+		draw_set_alpha(0.1);
+		draw_rectangle(room_width/2-500,room_height/2-500,room_width/2+500,room_height/2+500,false);
+		draw_set_alpha(1);
+		draw_sprite(Sprite5,irandom(7),room_width/2+random_range(-500,500), room_height/2+random_range(-500,500));
 	}
 }

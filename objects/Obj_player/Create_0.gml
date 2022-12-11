@@ -21,11 +21,17 @@ critdmg = 1.2;
 critper = 5;
 b_n = 1;
 
+shoot = 0;
+
 hit = 0;
 alarm_[0] = -1;
+alarm_[1] = -1;
+
+ddelay = 0;
+dddelay = 0;
 
 plevel = 3;
-qactive = false;
+qactive = -1;
 
 eff = 0;
 

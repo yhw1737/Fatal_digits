@@ -1,6 +1,6 @@
-for(var i=0;i<9;i++){
-	draw_text(x+30,y+30+30*i,string("({0},{1})",objobj[i,0],objobj[i,1]));
-}
+//for(var i=0;i<9;i++){
+//	draw_text(x+30,y+30+30*i,string("({0},{1})",objobj[i,0],objobj[i,1]));
+//}
 if eff > 0 {
 	for(var i=0;i<9;i++){
 		if objobj[i+1,0] != noone{
@@ -34,7 +34,7 @@ else {
 	}
 	surface_free(surf);
 	if dead = false {
-		draw_hp(hp, maxhp, x, y, 64, 8, c_white, c_white);
+		draw_hp(hp, maxhp, x, y, 48, 5, c_white, c_white);
 	}
 }
 draw_set_alpha(0.2);

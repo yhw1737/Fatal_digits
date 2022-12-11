@@ -19,6 +19,9 @@ if selection {
 			}
 		}
 	}
+	if obj > 1 {
+		draw_sprite_ext(Spr_lock,0, display_get_gui_width()/2, display_get_gui_height()/2,0.3,0.3,0,c_white,0.75);
+	}
 	draw_sprite(Sprite11, 0, display_get_gui_width()-200,display_get_gui_height()/2);
 	draw_sprite_ext(Sprite11, 0, 200,display_get_gui_height()/2,-1,1,0,c_white,1);
 	draw_line_width(32,150,display_get_gui_width()-32,150,3);
@@ -44,7 +47,7 @@ if selection {
 	if mouse_check_button_pressed(mb_left){
 		cx = display_get_gui_width()/2;
 		cy = display_get_gui_height()-200;
-		if mouse_x >= cx-157 && mouse_x <= cx+157 && mouse_y >= cy-36 && mouse_y <= cy+36{
+		if mouse_x >= cx-157 && mouse_x <= cx+157 && mouse_y >= cy-36 && mouse_y <= cy+36 && obj < 2{
 			objselected = true;
 			selection = false;
 			instance_activate_all();
