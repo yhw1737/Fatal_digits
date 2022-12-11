@@ -14,6 +14,7 @@
     {"id":{"name":"Obj_bot","path":"objects/Obj_bot/Obj_bot.yy",},"order":24,},
     {"id":{"name":"Obj_system","path":"objects/Obj_system/Obj_system.yy",},"order":1,},
     {"id":{"name":"spr_monster2","path":"sprites/spr_monster2/spr_monster2.yy",},"order":6,},
+    {"id":{"name":"Sprite29","path":"sprites/Sprite29/Sprite29.yy",},"order":21,},
     {"id":{"name":"Spr_player","path":"sprites/Spr_player/Spr_player.yy",},"order":3,},
     {"id":{"name":"Obj_bullet_4","path":"objects/Obj_bullet_4/Obj_bullet_4.yy",},"order":16,},
     {"id":{"name":"Obj_boss02","path":"objects/Obj_boss02/Obj_boss02.yy",},"order":25,},
@@ -41,6 +42,7 @@
     {"id":{"name":"Obj_monster2","path":"objects/Obj_monster2/Obj_monster2.yy",},"order":10,},
     {"id":{"name":"spr_bot","path":"sprites/spr_bot/spr_bot.yy",},"order":16,},
     {"id":{"name":"Oenemy","path":"objects/Oenemy/Oenemy.yy",},"order":8,},
+    {"id":{"name":"Sprite28","path":"sprites/Sprite28/Sprite28.yy",},"order":20,},
     {"id":{"name":"Spr_tanmak","path":"sprites/Spr_tanmak/Spr_tanmak.yy",},"order":13,},
     {"id":{"name":"Obj_player","path":"objects/Obj_player/Obj_player.yy",},"order":0,},
     {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},"order":0,},
@@ -107,6 +109,6 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2022.9.1.51",
+    "IDEVersion": "2022.11.0.54",
   },
 }
