@@ -15,5 +15,6 @@ alarm[0] = re;
 re*=1.25;
 
 global.abilsel = false;
+global.clear = false;
 
 boss = -1;
