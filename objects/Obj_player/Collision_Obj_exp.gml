@@ -49,7 +49,7 @@ if global.abilsel = false && (dead = false || (dead = true && alarm_[0] != -1)){
 				critdmg+=1;
 			}
 		}
-		if level == 10 {
+		if level == 10 || level == 20 || level == 30{
 			Obj_system.boss = 3*room_speed;
 		}
 	}
