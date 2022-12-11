@@ -18,3 +18,5 @@ global.abilsel = false;
 global.clear = false;
 
 boss = -1;
+
+sprite = Sprite28;

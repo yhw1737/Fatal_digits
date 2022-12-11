@@ -71,6 +71,7 @@ if selection {
 						dmg_ = dmg;
 						attspd_ = attspd;
 					}
+					Obj_system.sprite = Sprite29;
 				break;
 				case 2:
 					with(Obj_player){

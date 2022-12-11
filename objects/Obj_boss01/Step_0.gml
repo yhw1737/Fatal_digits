@@ -1,7 +1,4 @@
 if global.abilsel == false {
-	if delay = 0 {
-
-	}
 	if (b_checkCount<=0){
 		for(var i=0;i<8;i++){
 			var it = instance_create_depth(x,y,0,Obj_tanmak);
@@ -14,9 +11,6 @@ if global.abilsel == false {
 	}
 	if(b_checkCount>0){
 		b_checkCount--;
-	}
-	if delay > 0 {
-		delay--;
 	}
 	if hit > 0
 		hit--;
