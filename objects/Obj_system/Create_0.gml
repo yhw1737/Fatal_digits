@@ -22,3 +22,4 @@ global.clear = false;
 boss = -1;
 
 sprite = Sprite28;
+time = 0;

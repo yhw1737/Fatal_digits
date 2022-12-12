@@ -140,9 +140,13 @@ if room == Room1 && objselected && global.abilsel = false{
 				draw_sprite(Sprite24,1,0,0);
 				draw_set_halign(fa_right);
 				draw_set_font(Font1);
-				draw_text(230, 682, floor(min(100*(Obj_player.level/31),99)));
+				draw_text(245, 678, floor(min(100*(Obj_player.level/31),99)));
 				draw_set_halign(fa_left);
 			}
+			draw_set_halign(fa_right);
+			draw_set_font(Font1);
+			draw_text(1920-200, 540+250, string("{0}min {1}sec",floor(Obj_system.time/(room_speed*60)),floor(Obj_system.time/room_speed)%60));
+			draw_set_halign(fa_left);
 			draw_sprite(Spr_player,obj,1920-300,1080/2);
 			if mouse_check_button_pressed(mb_left){
 				if dmouse_x > 189 && dmouse_x < 331 && dmouse_y > 742 && dmouse_y < 882{
