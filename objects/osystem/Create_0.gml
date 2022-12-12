@@ -9,8 +9,9 @@ active = false;
 c = 0;
 objselected = false;
 selection = false;
-changing = false;
 charcn = false;
 obj = 0;
+
+audio_play_sound(Sound3_ZZ,1,1);
 
 maxobj = 3;

@@ -131,14 +131,6 @@ var dmouse_x = device_mouse_x_to_gui(0);
 var dmouse_y = device_mouse_y_to_gui(0);
 
 if room == Room1 && objselected && global.abilsel = false{
-	for (var i = 0; i < height; i+=8) {
-		if irandom(room_speed/3) == 0 {
-			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8 + random_range(-noise_range, noise_range), dmouse_y - 7 + i)
-		}
-		else {
-			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8, dmouse_y - 7 + i)
-		}
-	}
 	if object_exists(Obj_player){
 		if Obj_player.dead = true && Obj_player.alarm_[0] == -1{
 			if global.clear{
@@ -157,6 +149,14 @@ if room == Room1 && objselected && global.abilsel = false{
 					game_restart();
 				}
 			}
+		}
+	}
+	for (var i = 0; i < height; i+=8) {
+		if irandom(room_speed/3) == 0 {
+			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8 + random_range(-noise_range, noise_range), dmouse_y - 7 + i)
+		}
+		else {
+			draw_sprite_part(Sprite7, 1, 0, i, width, 12, dmouse_x - 8, dmouse_y - 7 + i)
 		}
 	}
 }

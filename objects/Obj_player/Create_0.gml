@@ -1,9 +1,9 @@
 friction = 1;
 
-delay = 0.2*room_speed;
-delay_2 = 0.2*room_speed;
-delay_3 = 0.2*room_speed;
-delay_4 = 0.2*room_speed;
+delay = 0.05*room_speed;
+delay_2 = 0.05*room_speed;
+delay_3 = 0.05*room_speed;
+delay_4 = 0.05*room_speed;
 
 attspd = 0.2*room_speed;
 maxspd = 240/room_speed;

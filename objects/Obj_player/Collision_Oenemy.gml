@@ -5,10 +5,11 @@ if global.abilsel = false && dead = false{
 		}
 		else {
 			hp -= 25;
-			hit = room_speed*1.5;
 		}
+		hit = room_speed*1.5;
 	}
 	if hp <= 0{
 		dead = true;
+		audio_stop_sound(Sound2_BGM);
 	}
 }

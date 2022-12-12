@@ -3,7 +3,7 @@ Obj_player.aaa[image_index]++;
 switch(image_index){
 	case 0:
 		AttSpd(up, 1);
-		Accuracy_(up, 1);
+		Accuracy_(down, 1);
 	break;
 	case 1:
 		Dmg(up, 1);

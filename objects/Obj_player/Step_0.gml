@@ -119,9 +119,9 @@ if global.abilsel = false {
 	}
 	//skill
 	if mouse_check_button_pressed(mb_right){
-		if delay_2 <= 0 {
-			switch(image_index){
-				case 0:
+		switch(image_index){
+			case 0:
+			if delay_3 <= 0 {
 				if level >= 14 {
 					var n = 8;
 					if level >= 25
@@ -138,62 +138,69 @@ if global.abilsel = false {
 						}
 						it.dmg = critic;
 					}
-					delay_2 = room_speed*1;
+					delay_3 = room_speed*8;
 					with(Obj_bot){
-						repeat(3+floor(min(2,(level-21))/3)){
+						repeat(3+floor(min(2,(other.level-21))/3)){
 							var it = instance_create_depth(x,y,0,Obj_udo);
 							var rd = random(360);
 							it.direction = rd;
 							it.image_angle = rd;
 							it.speed = 3;
-							var critic = 10+4*floor(min(3,(level-14))/3);
+							var critic = 10+4*floor(min(3,(other.level-14))/3);
 							it.dmg = critic;
 						}
 					}
 				}
-				break;
-				case 1:
-					if level >= 7 {
-						repeat(4+floor(min(4,(level-7))/3)){
-							var it = instance_create_depth(x,y,0,Obj_bullet_5);
-							var rd = image_angle+random_range(-10,10);
-							it.direction = rd;
-							it.image_angle = rd;
-							it.speed = 15;
-							var critic = 5+0.2*dmg;
-							if irandom(99) < critper{
-								critic*=critdmg;
-							}
-							it.dmg = critic;
-							it.tt = room_speed*(1+0.1*floor(min(4,(level-7))/3));
-						}
-						delay_2 = room_speed*(13-0.5*floor(min(4,(level-7))/3));
-					}
-				break;
 			}
+			break;
+			case 1:
+			if delay_2 <= 0 {
+				if level >= 7 {
+					repeat(4+floor(min(4,(level-7))/3)){
+						var it = instance_create_depth(x,y,0,Obj_bullet_5);
+						var rd = image_angle+random_range(-20,20);
+						it.direction = rd;
+						it.image_angle = rd;
+						it.spd = 300/room_speed;
+						it.speed = 300/room_speed;
+						var critic = 5+1.2*dmg;
+						if irandom(99) < critper{
+							critic*=critdmg;
+						}
+						it.dmg = critic;
+							
+						it.tt = room_speed*(1+0.1*floor(min(4,(level-7))/3));
+					}
+					delay_2 = room_speed*(13-0.5*floor(min(4,(level-7))/3));
+				}
+			}
+			break;
 		}
 	}
 	if keyboard_check_pressed(ord("E")){
-		if delay_3 <= 0 {
-			switch(image_index){
-				case 0:
+		switch(image_index){
+			case 0:
+			if delay_2 <= 0 {
 				if level >= 7 {
 					dead = true;
 					hit = room_speed*1.5;
 					alarm_[0] = room_speed*1.5;
-					delay_3 = room_speed*(15-min(4,(level-7)));
+					delay_2 = room_speed*(15-min(4,(level-7)));
 				}
-				break;
-				case 1:
+			}
+			break;
+			case 1:
+			if delay_3 <= 0 {
 				if level >= 14 {
 					if instance_exists(Obj_bar)
 						instance_destroy(Obj_bar);
 					var it = instance_create_depth(x,y,0,Obj_bar);
-					it.hp = 180+40*floor(min(3,(level-7))/3)
+					it.hp = 180+40*floor(min(3,(level-7))/3);
+					it.image_angle = image_angle;
 					delay_3 = room_speed*10;
 				}
-				break;
 			}
+			break;
 		}
 	}
 	if keyboard_check_pressed(ord("Q")){
@@ -211,11 +218,15 @@ if global.abilsel = false {
 				case 1:
 				if level >= 21 {
 					var it = instance_create_depth(x,y,0,Obj_bullet_6);
+					it.direction = image_angle;
+					it.image_angle = image_angle;
 					var critic = 2.5*dmg;
 					if irandom(99) < critper{
 						critic*=critdmg;
 					}
 					it.dmg = critic;
+					it.spd = 1000/room_speed;
+					it.speed = 1000/room_speed;
 					delay_4 = room_speed*(25-3*floor(min(2,(level-21)/3)));
 				}
 				break;
@@ -223,52 +234,61 @@ if global.abilsel = false {
 		}
 	}
 	//
-	if ddelay > 0{
-		ddelay--;
-	}
-	else{
-		if level >= 3{
-			var ll = 8;
-			if level >= 17 {
-				ll = 16;
+	if image_index = 1  {
+		if ddelay > 0{
+			ddelay--;
+		}
+		else{
+			if level >= 3{
+				var ll = 8;
+				if level >= 17 {
+					ll = 16;
+				}
+				for(var i=0;i<ll;i++){
+					var it = instance_create_depth(x,y,0,Obj_bullet_2);
+					var critic = dmg;
+						if irandom(99) < critper{
+							critic*=critdmg;
+						}
+					it.dmg = critic;
+					var A = (360/ll)*i;
+					it.image_angle = image_angle+A;
+					it.direction = image_angle+A;
+					it.speed = 900/room_speed;
+					it.spd = 900/room_speed;
+				}
+				ddelay = 5*room_speed;
+				if level >= 10 {
+					ddelay = 3*room_speed;
+				}
+				if level >= 17 {
+					ddelay = 1.5*room_speed;
+				}
 			}
-			for(var i=0;i<ll;i++){
-				var it = instance_create_depth(x,y,0,Obj_bullet_2);
-				it.dmg = critic;
-				var A = (360/ll)*i;
-				it.image_angle = image_angle+A;
-				it.direction = image_angle+A;
-				it.speed = 900/room_speed;
-				it.spd = 900/room_speed;
-			}
-			ddelay = 5*room_speed;
-			if level >= 10 {
-				ddelay = 3*room_speed;
-			}
-			if level >= 17 {
-				ddelay = 1.5*room_speed;
+		}
+		if dddelay > 0{
+			dddelay--;
+		}
+		else{
+			if level >= 25{
+				var ll = 8;
+				for(var i=0;i<ll;i++){
+					var it = instance_create_depth(x,y,0,Obj_bullet_2);
+					var critic = dmg;
+						if irandom(99) < critper{
+							critic*=critdmg;
+						}
+					it.dmg = critic;
+					var A = (360/ll)*i;
+					it.image_angle = image_angle+A;
+					it.direction = image_angle+A;
+					it.speed = 900/room_speed;
+					it.spd = 900/room_speed;
+				}
+				dddelay = room_speed;
 			}
 		}
 	}
-	if dddelay > 0{
-		dddelay--;
-	}
-	else{
-		if level >= 25{
-			var ll = 8;
-			for(var i=0;i<ll;i++){
-				var it = instance_create_depth(x,y,0,Obj_bullet_2);
-				it.dmg = critic;
-				var A = (360/ll)*i;
-				it.image_angle = image_angle+A;
-				it.direction = image_angle+A;
-				it.speed = 900/room_speed;
-				it.spd = 900/room_speed;
-			}
-			ddelay = room_speed;
-		}
-	}
-
 	if delay > 0
 	delay--;
 	if delay_2 > 0

@@ -3,8 +3,10 @@ if global.abilsel = false && (dead = false || (dead = true && alarm_[0] != -1)){
 	if image_index == 0 && level >= 10 {
 		exp_c+=other.exp_*0.25;
 	}
+	audio_play_sound(Sound1,0,0);
 	instance_destroy(other);
 	if exp_c >= exp_m{
+		audio_play_sound(Sound4_click,0,0);
 		exp_c-=exp_m;
 		level++;
 		if (level % 6 == 0){

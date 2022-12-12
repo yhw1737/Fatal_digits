@@ -1,4 +1,6 @@
-
+if !(x > 960 && x < room_width-960 && y > 540 && y < room_height-540){
+	instance_destroy();
+}
 if global.abilsel {
 	speed = 0;
 }
@@ -16,9 +18,9 @@ else {
 		}
 		if hey <= 0{
 			with(Oenemy){
-				if point_distance(x,y,other.x,other.y) <= 25{
+				if place_meeting(x,y,other){
 					hp-=other.dmg;
-					tazer = tt;
+					tazer = other.tt;
 				}
 			}
 		instance_create_depth(x,y,-100,Object18);

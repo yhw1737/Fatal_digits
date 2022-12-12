@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "Obj_bot",
   "spriteId": {
-    "name": "spr_bot",
-    "path": "sprites/spr_bot/spr_bot.yy",
+    "name": "Spr_player",
+    "path": "sprites/Spr_player/Spr_player.yy",
   },
   "solid": false,
   "visible": true,

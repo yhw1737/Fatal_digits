@@ -5,12 +5,13 @@ if Obj_player.dead = false && global.abilsel = false{
 		speed = spd;
 		with(Obj_bullet_5){
 			if heyhey = other.id{
-				other.speed = other.spd*0.8;
+				other.speed = other.spd*0.5;
 			}
 		}
 	}
 	else {
 		tazer--;
+		speed = 0;
 	}
 	if hp < 0 {
 		instance_destroy();

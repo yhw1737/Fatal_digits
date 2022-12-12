@@ -1,5 +1,5 @@
-spd = 0/room_speed;
-turn = 0;
+spd = 80/room_speed;
+turn = 4;
 hp=4500;
 maxhp=hp;
 image_speed=0;

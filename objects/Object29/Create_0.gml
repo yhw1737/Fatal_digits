@@ -1,5 +1,4 @@
-with(Oenemy){
-	if place_meeting(x,y,other){
-		hp-=other.dmg;
-	}
-}
+dmg = 0;
+image_xscale = 3;
+image_yscale = 3;
+alarm[0] = 1;
