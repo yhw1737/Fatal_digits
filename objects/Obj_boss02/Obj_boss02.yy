@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "Obj_boss02",
   "spriteId": {
-    "name": "Spr_boss1",
-    "path": "sprites/Spr_boss1/Spr_boss1.yy",
+    "name": "Spr_boss135",
+    "path": "sprites/Spr_boss135/Spr_boss135.yy",
   },
   "solid": false,
   "visible": true,

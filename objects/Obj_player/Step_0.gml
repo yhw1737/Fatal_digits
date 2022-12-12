@@ -34,26 +34,14 @@ if global.abilsel = false {
 				}
 				while(shoot >= 3){
 					shoot-=3;
-					if level >= 3 && level < 17 {
-						var it = instance_create_depth(x,y,0,Obj_udo);
-						var rd = random(360);
-						it.direction = rd;
-						it.image_angle = rd;
-						it.speed = 3;
-						var critic = 10;
-						if irandom(99) < critper{
-							critic*=critdmg;
-						}
-						it.dmg = critic;
-					}
-					else if level >= 17 {
-						repeat(3){
+					if level >= 3 {
+						repeat(1+2*floor(min(1,level/17))){
 							var it = instance_create_depth(x,y,0,Obj_udo);
 							var rd = random(360);
 							it.direction = rd;
 							it.image_angle = rd;
 							it.speed = 3;
-							var critic = 15;
+							var critic = 10;
 							if irandom(99) < critper{
 								critic*=critdmg;
 							}

@@ -35,9 +35,9 @@ if global.abilsel = false && (dead = false || (dead = true && alarm_[0] != -1)){
 		if image_index = 0 {
 			recov+=0.0008;
 			if level == 10
-			dmg+=3;
+			dmg+=1;
 			if level == 25
-			dmg+=10;
+			dmg+=3;
 		}
 		if image_index == 1 {
 			if level == 3 {

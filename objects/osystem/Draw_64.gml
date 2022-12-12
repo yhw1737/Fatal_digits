@@ -140,13 +140,18 @@ if room == Room1 && objselected && global.abilsel = false{
 				draw_sprite(Sprite24,1,0,0);
 				draw_set_halign(fa_right);
 				draw_set_font(Font1);
-				draw_text(230, 682, floor(string(100*(Obj_player.level/31))));
+				draw_text(230, 682, floor(min(100*(Obj_player.level/31),99)));
 				draw_set_halign(fa_left);
 			}
 			draw_sprite(Spr_player,obj,1920-300,1080/2);
 			if mouse_check_button_pressed(mb_left){
 				if dmouse_x > 189 && dmouse_x < 331 && dmouse_y > 742 && dmouse_y < 882{
-					game_restart();
+					room_restart();
+					objselected = false;
+					selection = false;
+					charcn = false;
+					obj = 0;
+					audio_stop_sound(Sound2_BGM);
 				}
 			}
 		}

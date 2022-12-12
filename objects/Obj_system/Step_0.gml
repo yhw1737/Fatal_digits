@@ -66,7 +66,6 @@ if boss > -1 {
 		}
 		if Obj_player.level >= 30{
 			instance_create_depth(room_width/2,room_height/2,0,Obj_boss03);
-			instance_destroy(Obj_exp);
 		}
 		else if Obj_player.level >= 20{
 			instance_create_depth(xx,yy,0,Obj_boss02);

@@ -1,7 +1,7 @@
 if global.abilsel == false {
 	if delay <= 0 {
 		for(var i=0;i<3;i++){
-			var it = instance_create_depth(x,y,0,Obj_tanmak);
+			var it = instance_create_depth(x,y,0,Obj_tanmak31);
 			it.direction = point_direction(x,y,Obj_player.x,Obj_player.y)-3+3*i;
 			it.speed = 1000/room_speed;
 			it.spd = 1000/room_speed;
